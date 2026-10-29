@@ -1,5 +1,7 @@
 const content = document.getElementById("content");
 
+const homeurl = "index.html";
+
 async function loadContent(src) {
     try {
         const response = await fetch(src);
@@ -22,3 +24,5 @@ document.querySelectorAll("button[data-ref]").forEach(button => {
         loadContent(ref);
     });
 });
+
+loadContent(homeurl);
