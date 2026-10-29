@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Skyblock Helper</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/sidebar.js" defer></script>
+    <script src="js/contentloader.js" defer></script>
+</head>
+<body>
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+            <header class="sidebar-header">
+                <button data-ref="home.html" id="home">Skyblock Helper</button>
+                <button id="collapseSidebar">
+                    <svg width="20" height="20" class="icon">
+                        <rect width="18" height="14" x="1" y="3" rx="4" ry="4"></rect>
+                        <line x1="7" x2="7" y1="3" y2="17"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <nav class="navigation" aria-label="Hauptnavigation">
+                <button data-ref="bazaar.html" class="navigation-link">
+                    <img src="images/Bazaar_Icon.png" alt="" width="20" height="20" />
+                    <span class="navigation-span">Bazaar</span>
+                </button>
+                <a href="#" class="navigation-link">
+                    <img src="images/AuctionHouse_Icon.png" alt="" width="20" height="20" />
+                    <span class="navigation-span">Auction House</span>
+                </a>
+                <a href="#" class="navigation-link">
+                    <img src="images/MagicalPower_Icon.png" alt="" width="20" height="20" />
+                    <span class="navigation-span">Accessory Power</span>
+                </a>
+            </nav>
+        </aside>
+
+        <aside class="sidebar-minimized hidden" id="sidebar-minimized">
+            <header class="sidebar-header">
+                <button id="openSidebar">
+                    <svg width="20" height="20" class="icon">
+                        <line x1="3.333333333" x2="16.66666666" y1="5" y2="5"></line>
+                        <line x1="3.333333333" x2="16.66666666" y1="10" y2="10"></line>
+                        <line x1="3.333333333" x2="16.66666666" y1="15" y2="15"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <nav class="navigation">
+                <a href="bazaar.html" class="navigation-link">
+                    <img src="images/Bazaar_Icon.png" alt="Bazaar Icon" width="20" height="20" />
+                </a>
+                <a href="#" class="navigation-link">
+                    <img src="images/AuctionHouse_Icon.png" alt="" width="20" height="20" />
+                </a>
+                <a href="#" class="navigation-link">
+                    <img src="images/MagicalPower_Icon.png" alt="" width="20" height="20" />
+                </a>
+            </nav>
+        </aside>
+        <div class="resizer" id="resizer">
+            <div class="resizer-line"></div>
+        </div>
+        <div class="content" id="content">
+
+        </div>
+    </div>
+</body>
+</html>
