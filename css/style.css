@@ -83,6 +83,10 @@ button {
         background: var(--highlight);
     }
 
+.nohighlight {
+    background: transparent !important;
+}
+
 .icon {
     stroke-width: 1.5px;
     stroke: currentColor;
