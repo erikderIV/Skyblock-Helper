@@ -1,4 +1,5 @@
 const content = document.getElementById("content");
+const homeBtn = document.getElementById("homeBtn");
 
 const homeurl = "dynamicContent/home.html";
 
@@ -24,10 +25,12 @@ document.querySelectorAll("button[data-ref]").forEach(button => {
         loadContent(ref);
 
         document.querySelectorAll("button[data-ref]").forEach(btn => {
-            btn.classList.remove("acive");
+            btn.classList.remove("active");
         });
 
-        this.classList.add("active");
+        if (this !== homeBtn) {
+            this.classList.add("active");
+        }
     });
 });
 
