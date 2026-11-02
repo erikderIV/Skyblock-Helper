@@ -44,7 +44,7 @@ async function loadContent(src) {
         if (src !== homeurl) {
             loadContent(homeurl);
         } else {
-            content.innerHTML = "<p>Content konnte nicht geladen werden.</p>";
+            content.innerHTML = "<p>Error while loading this page.</p>";
         }
     }
 }
