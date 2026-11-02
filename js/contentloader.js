@@ -1,6 +1,6 @@
 const content = document.getElementById("content");
 
-const homeurl = "index.html";
+const homeurl = "dynamicContent/home.html";
 
 async function loadContent(src) {
     try {
@@ -22,6 +22,12 @@ document.querySelectorAll("button[data-ref]").forEach(button => {
     button.addEventListener("click", function() {
         const ref = this.dataset.ref;
         loadContent(ref);
+
+        document.querySelectorAll("button[data-ref]").forEach(btn => {
+            btn.classList.remove("acive");
+        });
+
+        this.classList.add("active");
     });
 });
 
