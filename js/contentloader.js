@@ -26,11 +26,11 @@ document.querySelectorAll("button[data-ref]").forEach(button => {
 
         document.querySelectorAll("button[data-ref]").forEach(btn => {
             btn.classList.remove("active");
-        });
 
-        if (this !== homeBtn) {
-            this.classList.add("active");
-        }
+            if (btn.dataset.ref === ref) {
+                btn.classList.add("active");
+            }
+        });
     });
 });
 
