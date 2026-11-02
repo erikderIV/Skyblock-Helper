@@ -1,0 +1,33 @@
+﻿.searchbar-container {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.searchbar {
+    display: flex;
+    background: var(--sidebar);
+    border: 1px solid var(--highlight);
+    border-radius: 4px;
+    padding: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vh;
+    width: 100%;
+}
+
+.highlight {
+    border: 1px solid var(--accent);
+    outline: 2px solid var(--accent-blur);
+}
+
+.search, .search:focus {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+}
