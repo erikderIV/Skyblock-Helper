@@ -29,6 +29,19 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+button {
+    display: flex;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: var(--text);
+}
+
 .app {
     display: flex;
     padding: 0px;
@@ -64,19 +77,6 @@ body {
     text-decoration: none;
     color: var(--text);
     user-select: none;
-}
-
-button {
-    display: flex;
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    color: var(--text);
 }
 
     button:hover {

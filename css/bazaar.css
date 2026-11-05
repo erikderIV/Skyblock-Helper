@@ -1,46 +1,102 @@
-﻿.searchbar-container {
-    width: 100%;
-    background: transparent;
-    display: flex;
+﻿
+
+.searchbar-container, .table-container {
     padding: 10px;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.searchbar, .table-wrapper {
+    width: 90%;
 }
 
 .searchbar {
     display: flex;
     background: var(--sidebar);
-    border: 1px solid var(--highlight);
     border-radius: 4px;
+    outline: 1px solid var(--highlight);
     padding: 10px;
-    align-items: center;
+    gap: 10px;
     justify-content: flex-start;
-    gap: 2vh;
+    align-items: center;
+}
+
+.search {
     width: 100%;
+    color: var(--text);
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .highlight {
-    border: 1px solid var(--accent);
-    outline: 2px solid var(--accent-blur);
+    border: 1px solid var(--accent) !important;
+    outline: 2px solid var(--accent-blur) !important;
+    color: var(--accent);
 }
 
-.search, .search:focus {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: inherit;
-}
-
-tr {
-    border: 1px solid var(--highlight);
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     background: var(--sidebar);
-    text-align: center;
-    border-radius: 4px;
-    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 th {
-    font-size: 18px;
-    font-weight: 500;
+    background: var(--highlight);
+    padding: 4px 6px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+    th button {
+        width: 100%;
+        gap: 6px;
+        padding: 8px 10px;
+        justify-content: flex-start;
+    }
+
+tbody tr {
+    transition: background 0.1s;
+}
+
+    tbody tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    tbody tr:hover {
+        background: var(--highlight);
+    }
+
+td {
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    text-align: right;
+}
+
+    td:first-child {
+        text-align: left;
+        font-weight: 500;
+        color: var(--accent);
+    }
+
+tbody tr:last-child td {
+    border-bottom: none;
 }

@@ -8,46 +8,92 @@
         <input class="search" id="search" placeholder="Search for items..." autocomplete="off" />
     </div>
 </div>
-<div class="content">
-    <table>
-        <thead>
-            <tr class="thead">
-                <th>
-                    Product
-                </th>
-                <th>
-                    Sell Price
-                </th>
-                <th>
-                    Buy Price
-                </th>
-                <th>
-                    Sell Volume
-                </th>
-                <th>
-                    Buy Volume
-                </th>
-                <th>
-                    Sell Moving Week
-                </th>
-                <th>
-                    Buy Moving Week
-                </th>
-                <th>
-                    Sell Orders
-                </th>
-                <th>
-                    Buy Orders
-                </th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-    </table>
+<div class="table-container">
+    <div class="table-wrapper">
+        <table>
+            <thead id="thead">
+                <tr>
+                    <th>
+                        <button id="product">
+                            <span>
+                                Product
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="buyPrice">
+                            <span>
+                                Buy Price
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="sellPrice">
+                            <span>
+                                Sell Price
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="profit">
+                            <span>
+                                Profit
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="buyOrders">
+                            <span>
+                                Buy Orders
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="sellOrders">
+                            <span>
+                                Sell Orders
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="buyVolume">
+                            <span>
+                                Buy Volume
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="sellVolume">
+                            <span>
+                                Sell Volume
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="buyMovingWeek">
+                            <span>
+                                Buy Moving Week
+                            </span>
+                        </button>
+                    </th>
+                    <th>
+                        <button id="sellMovingWeek">
+                            <span>
+                                Sell Moving Week
+                            </span>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>
+                        test
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<script>
-    const api = https://api.hypixel.net/v2/skyblock/bazaar;
-    const tbody = document.getElementById("tbody");
-    const search = document.getElementById("search");
-</script>
+<script src="js/bazaar.js"></script>
