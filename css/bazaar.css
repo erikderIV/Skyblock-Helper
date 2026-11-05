@@ -45,13 +45,13 @@
 
 table {
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     font-variant-numeric: tabular-nums;
 }
 
 thead {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1;
 }
