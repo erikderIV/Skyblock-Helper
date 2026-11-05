@@ -111,58 +111,58 @@ function sortProducts() {
 		let valueB;
 
 		switch (sortCol) {
-		case "product":
-			valueA = keyA;
-			valueB = keyB;
-			break;
+			case "product":
+				valueA = keyA;
+				valueB = keyB;
+				break;
 
-		case "buyPrice":
-			valueA = a.quick_status.buyPrice;
-			valueB = b.quick_status.buyPrice;
-			break;
+			case "buyPrice":
+				valueA = a.quick_status.buyPrice;
+				valueB = b.quick_status.buyPrice;
+				break;
 
-		case "sellPrice":
-			valueA = a.quick_status.sellPrice;
-			valueB = b.quick_status.sellPrice;
-			break;
+			case "sellPrice":
+				valueA = a.quick_status.sellPrice;
+				valueB = b.quick_status.sellPrice;
+				break;
 
-		case "profit":
-			valueA = a.quick_status.buyPrice - a.quick_status.sellPrice;
-			valueB = b.quick_status.buyPrice - b.quick_status.sellPrice;
-			break;
+			case "profit":
+				valueA = a.quick_status.buyPrice - a.quick_status.sellPrice;
+				valueB = b.quick_status.buyPrice - b.quick_status.sellPrice;
+				break;
 
-		case "buyOrders":
-			valueA = a.quick_status.buyOrders;
-			valueB = b.quick_status.buyOrders;
-			break;
+			case "buyOrders":
+				valueA = a.quick_status.buyOrders;
+				valueB = b.quick_status.buyOrders;
+				break;
 
-		case "sellOrders":
-			valueA = a.quick_status.sellOrders;
-			valueB = b.quick_status.sellOrders;
-			break;
+			case "sellOrders":
+				valueA = a.quick_status.sellOrders;
+				valueB = b.quick_status.sellOrders;
+				break;
 
-		case "buyVolume":
-			valueA = a.quick_status.buyVolume;
-			valueB = b.quick_status.buyVolume;
-			break;
+			case "buyVolume":
+				valueA = a.quick_status.buyVolume;
+				valueB = b.quick_status.buyVolume;
+				break;
 
-		case "sellVolume":
-			valueA = a.quick_status.sellVolume;
-			valueB = b.quick_status.sellVolume;
-			break;
+			case "sellVolume":
+				valueA = a.quick_status.sellVolume;
+				valueB = b.quick_status.sellVolume;
+				break;
 
-		case "buyMovingWeek":
-			valueA = a.quick_status.buyMovingWeek;
-			valueB = b.quick_status.buyMovingWeek;
-			break;
+			case "buyMovingWeek":
+				valueA = a.quick_status.buyMovingWeek;
+				valueB = b.quick_status.buyMovingWeek;
+				break;
 
-		case "sellMovingWeek":
-			valueA = a.quick_status.sellMovingWeek;
-			valueB = b.quick_status.sellMovingWeek;
-			break;
+			case "sellMovingWeek":
+				valueA = a.quick_status.sellMovingWeek;
+				valueB = b.quick_status.sellMovingWeek;
+				break;
 
-		default:
-			return 0;
+			default:
+				return 0;
 		}
 
 		let result = typeof valueA === "string" ? valueA.localeCompare(valueB) : valueA - valueB;

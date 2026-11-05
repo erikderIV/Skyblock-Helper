@@ -55,6 +55,7 @@ button {
     height: 100%;
     background: var(--sidebar);
     position: sticky;
+    top: 0;
 }
 
 .sidebar {
