@@ -18,6 +18,8 @@
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
+    position: sticky;
+    top: 0px;
 }
 
 .search {
@@ -62,6 +64,7 @@ th {
     font-size: 13px;
     white-space: nowrap;
     position: sticky;
+    top: 0px;
 }
 
     th button {

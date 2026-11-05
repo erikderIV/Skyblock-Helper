@@ -54,7 +54,7 @@ button {
     flex-shrink: 0;
     height: 100%;
     background: var(--sidebar);
-    position: fixed;
+    position: sticky;
 }
 
 .sidebar {
