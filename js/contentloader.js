@@ -1,60 +1,67 @@
 const content = document.getElementById("content");
-const homeBtn = document.getElementById("homeBtn");
+const homeBtin = document.getElementById("homeBtn");
 
 const homeurl = "dynamicContent/home.html";
 
 const savedDynamicContent = localStorage.getItem("dynamicContent");
 
+let currentPage = null;
+let loadId = 0;
 
-async function loadContent(src) {
-    try {
-        const response = await fetch(src);
+async function loadContent(src, modulePath) {
+	const thisLoad = ++loadId;
 
-        if (!response.ok) {
-            throw new Error("Datei konnte nicht geladen werden");
-        }
+	currentPage?.destroy?.();
+	currentPage = null;
 
-        const html = await response.text();
+	try {
+		const response = await fetch(src);
 
-        content.innerHTML = html;
+		if (!response.ok) {
+			throw new Error("Datei konnte nicht geladen werden");
+		}
 
-        const scripts = content.querySelectorAll("script");
+		const html = await response.text();
 
-        scripts.forEach(oldScript => {
-            const newScript = document.createElement("script");
+		if (thisLoad !== loadId) return;
 
-            [...oldScript.attributes].forEach(attr => {
-                newScript.setAttribute(attr.name, attr.value);
-            });
+		content.innerHTML = html;
 
-            newScript.textContent = oldScript.textContent;
+		if (modulePath) {
+			const module = await import(modulePath);
 
-            oldScript.replaceWith(newScript);
-        });
+			if (thisLoad !== loadId) return;
 
-        localStorage.setItem("dynamicContent", src);
+			currentPage = module;
+			await module.init?.(content);
+		}
 
-        document.querySelectorAll("button[data-ref]").forEach(btn => {
-            btn.classList.toggle("active", btn.dataset.ref === src && btn !== homeBtn);
-        });
+		localStorage.setItem("dynamicContent", src);
 
-    } catch (error) {
-        console.error(error);
+		document.querySelectorAll("button[data-ref]").forEach(btn => {
+			btn.classList.toggle("active", btn.dataset.ref === src && btn !== homeBtn);
+		});
+	} catch(error) {
+		console.error(error);
+		
+		if (thisLoad !== loadId) return;
 
-        if (src !== homeurl) {
-            loadContent(homeurl);
-        } else {
-            content.innerHTML = "<p>Error while loading this page.</p>";
-        }
-    }
+		if (src !== homeurl) {
+			loadContent(homeurl);
+		} else {
+				content.innerHTML = "<p>Error while loading this page.</p>";
+		}
+	}
 }
 
+document.addEventListener("click", (event) => {
+	const btn = event.target.closest("button[data-ref]");
+	if (!btn) return;
 
-document.querySelectorAll("button[data-ref]").forEach(button => {
-    button.addEventListener("click", function() {
-        const ref = this.dataset.ref;
-        loadContent(ref);        
-    });
+	loadContent(btn.dataset.ref, btn.dataset.module);
 });
 
-loadContent(savedDynamicContent || homeurl);
+const startSrc = savedDynamicContent || homeUrl;
+const startBtn = document.querySelector(`button[data-ref="${startSrc}"]`);
+
+loadContent(startSrc, startBtn?.dataset.module);
