@@ -17,6 +17,8 @@
 
 html, body {
     height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 body {
@@ -54,9 +56,7 @@ button {
     flex-shrink: 0;
     height: 100%;
     background: var(--sidebar);
-    position: sticky;
-    top: 0px;
-    left: 0px;
+    overflow-y: auto;
 }
 
 .sidebar {
@@ -157,6 +157,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
     height: 100%;
-    width: 100%;
+    overflow-y: auto;    
 }

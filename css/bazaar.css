@@ -18,8 +18,7 @@
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
-    position: sticky;
-    top: 0px;
+    flex-shrink: 0;
 }
 
 .search {
@@ -38,9 +37,11 @@
 
 .table-wrapper {
     overflow-x: auto;
+    overflow-y: auto;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--sidebar);
+    flex: 1;
 }
 
 table {
@@ -59,10 +60,8 @@ thead {
 th {
     background: var(--highlight);
     padding: 4px 6px;
-    border-bottom: 1px solid var(--border);
     font-weight: 600;
     font-size: 13px;
-    white-space: nowrap;
     position: sticky;
     top: 0px;
 }
