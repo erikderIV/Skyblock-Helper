@@ -1,6 +1,4 @@
-﻿
-
-.searchbar-container, .table-container {
+﻿.searchbar-container, .table-container {
     padding: 10px;
     width: 100%;
     display: flex;
@@ -51,7 +49,7 @@ table {
 }
 
 thead {
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1;
 }
@@ -63,6 +61,7 @@ th {
     font-weight: 600;
     font-size: 13px;
     white-space: nowrap;
+    position: sticky;
 }
 
     th button {
