@@ -26,16 +26,16 @@ let sortCol = "product";
 let order = "ASC";
 
 const svgArrowUp = `<svg width="10" height="10" class=" icon">
-	                               <line x1="5" x2="5" y1="1" y2="9"></line>
-	                                        <line x1="5.4" x2="2" y1="0.9" y2="5"></line>
-	                                                <line x1="4.6" x2="8" y1="0.9" y2="5"></line>
-	                                                        </svg>`;
+						<line x1="5" x2="5" y1="1" y2="9"></line>
+						<line x1="5.4" x2="2" y1="0.9" y2="5"></line>
+						<line x1="4.6" x2="8" y1="0.9" y2="5"></line>
+					</svg>`;
 
 const svgArrowDown = `<svg width="10" height="10" class=" icon">
-	                                 <line x1="5" x2="5" y1="1" y2="9"></line>
-	                                         <line x1="5.4" x2="2" y1="9.1" y2="5"></line>
-	                                                 <line x1="4.6" x2="8" y1="9.1" y2="5"></line>
-	                                                         </svg>`;
+							<line x1="5" x2="5" y1="1" y2="9"></line>
+							<line x1="5.4" x2="2" y1="9.1" y2="5"></line>
+							<line x1="4.6" x2="8" y1="9.1" y2="5"></line>
+					</svg>`;
 
 search.addEventListener("focus", () => toggleHighlightSearchbar(true));
 search.addEventListener("blur", () => toggleHighlightSearchbar(false));
@@ -172,64 +172,33 @@ function sortProducts() {
 }
 
 function buildTableHead() {
-	product.innerHTML = `
-	                    <span>Product</span>
-	                    $ {sortCol === "product" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                    `;
-	buyPrice.innerHTML = `
-	                     <span>Buy Price</span>
-	                     $ {sortCol === "buyPrice" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                     `;
-	sellPrice.innerHTML = `
-	                      <span>Sell Price</span>
-	                      $ {sortCol === "sellPrice" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                      `;
-	profit.innerHTML = `
-	                   <span>Profit</span>
-	                   $ {sortCol === "profit" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                   `;
-	buyOrders.innerHTML = `
-	                      <span>Buy Orders</span>
-	                      $ {sortCol === "buyOrders" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                      `;
-	sellOrders.innerHTML = `
-	                       <span>Sell Orders</span>
-	                       $ {sortCol === "sellOrders" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                       `;
-	buyVolume.innerHTML = `
-	                      <span>Buy Volume</span>
-	                      $ {sortCol === "buyVolume" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                      `;
-	sellVolume.innerHTML = `
-	                       <span>Sell Volume</span>
-	                       $ {sortCol === "sellVolume" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                       `;
-	buyMovingWeek.innerHTML = `
-	                          <span>Buy Moving Week</span>
-	                          $ {sortCol === "buyMovingWeek" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                          `;
-	sellMovingWeek.innerHTML = `
-	                           <span>Sell Moving Week</span>
-	                           $ {sortCol === "sellMovingWeek" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}
-	                           `;
+	product.innerHTML = `<span>Product</span>${sortCol === "product" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	buyPrice.innerHTML = `<span>Buy Price</span>${sortCol === "buyPrice" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	sellPrice.innerHTML = `<span>Sell Price</span>${sortCol === "sellPrice" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	profit.innerHTML = `<span>Profit</span>${sortCol === "profit" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	buyOrders.innerHTML = `<span>Buy Orders</span>${sortCol === "buyOrders" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	sellOrders.innerHTML = `<span>Sell Orders</span>${sortCol === "sellOrders" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	buyVolume.innerHTML = `<span>Buy Volume</span>${sortCol === "buyVolume" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	sellVolume.innerHTML = `<span>Sell Volume</span>${sortCol === "sellVolume" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	buyMovingWeek.innerHTML = `<span>Buy Moving Week</span>${sortCol === "buyMovingWeek" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
+	sellMovingWeek.innerHTML = `<span>Sell Moving Week</span>${sortCol === "sellMovingWeek" ? (order === "ASC" ? svgArrowDown : svgArrowUp) : ""}`;
 }
 
 function buildTableBody() {
 	const rows = [];
 	for (const [productId, product] of sortedProducts) {
 		const q = product.quick_status;
-		rows.push(`
-		          <tr>
-		          <td>$ {formatText(productId)}</td>
-		          <td>$ {q.buyPrice.toFixed(2)}</td>
-		          <td>$ {q.sellPrice.toFixed(2)}</td>
-		          <td>$ {(q.buyPrice - q.sellPrice).toFixed(2)}</td>
-		          <td>$ {q.buyOrders}</td>
-		          <td>$ {q.sellOrders}</td>
-		          <td>$ {q.buyVolume}</td>
-		          <td>$ {q.sellVolume}</td>
-		          <td>$ {q.buyMovingWeek}</td>
-		          <td>$ {q.sellMovingWeek}</td>
+		rows.push(`<tr>
+					  <td>${formatText(productId)}</td>
+					  <td>${q.buyPrice.toFixed(2)}</td>
+					  <td>${q.sellPrice.toFixed(2)}</td>
+					  <td>${(q.buyPrice - q.sellPrice).toFixed(2)}</td>
+					  <td>${q.buyOrders}</td>
+					  <td>${q.sellOrders}</td>
+					  <td>${q.buyVolume}</td>
+					  <td>${q.sellVolume}</td>
+					  <td>${q.buyMovingWeek}</td>
+					  <td>${q.sellMovingWeek}</td>
 		          </tr>`);
 	}
 	tbody.innerHTML = rows.join("");
