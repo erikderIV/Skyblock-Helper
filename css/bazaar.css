@@ -35,7 +35,6 @@
 }
 
 .table-wrapper {
-    overflow: auto;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--sidebar);
@@ -47,6 +46,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     font-variant-numeric: tabular-nums;
+    overflow: auto;
 }
 
 thead th {
