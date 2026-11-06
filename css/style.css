@@ -161,3 +161,7 @@ button {
     height: 100%;
     overflow-y: auto;    
 }
+
+.text-content {
+    text-align: center;
+}
